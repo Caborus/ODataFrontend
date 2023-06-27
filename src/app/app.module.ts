@@ -4,7 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PokemonTableComponent } from './components/pokemon-table/pokemon-table.component';
-import { DxDataGridModule } from 'devextreme-angular';
+import { DxDataGridModule, DxButtonModule } from 'devextreme-angular';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
 
 @NgModule({
   declarations: [
@@ -16,6 +18,7 @@ import { DxDataGridModule } from 'devextreme-angular';
     BrowserModule,
     AppRoutingModule,
     DxDataGridModule,
+    DxButtonModule
   ],
 
   providers: [],
@@ -24,3 +27,5 @@ import { DxDataGridModule } from 'devextreme-angular';
 })
 
 export class AppModule { }
+
+platformBrowserDynamic().bootstrapModule(AppModule);

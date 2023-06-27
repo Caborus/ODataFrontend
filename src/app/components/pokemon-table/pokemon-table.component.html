@@ -1,3 +1,30 @@
-<p>pokemon-table works!</p>
-<dx-data-grid id="gridContainer" [dataSource]="dataSource" [showBorders]="true">
+<dx-data-grid id="gridContainer" 
+    [dataSource]="dataSource" 
+    [allowColumnReordering]="true"
+    [allowColumnResizing]="true"
+    [columnAutoWidth]="true"
+    [showBorders]="true"
+    [rowAlternationEnabled]="true"
+    (onExporting)="onExporting($event)"
+>
+    <dxo-scrolling rowRenderingMode="virtual"> </dxo-scrolling>
+    <dxo-paging [pageSize]="10"></dxo-paging>
+    <dxo-pager
+    [visible]="true"
+    [allowedPageSizes]="[5, 10, 'all']"
+    [displayMode]='"full"'
+    [showPageSizeSelector]="true"
+    [showInfo]="true"
+    [showNavigationButtons]="true"
+    ></dxo-pager>
+    <dxo-selection mode="multiple"></dxo-selection>
+    <dxo-column-chooser [enabled]="true"></dxo-column-chooser>
+    <dxo-column-fixing [enabled]="true"></dxo-column-fixing>
+    <dxo-editing
+        mode="row"
+        [allowAdding]="true"
+        [allowUpdating]="true"
+        [allowDeleting]="true"
+    ></dxo-editing>
+    <dxo-export [enabled]="true" [allowExportSelectedData]="true"></dxo-export>
 </dx-data-grid>
